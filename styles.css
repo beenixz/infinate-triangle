@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#maze {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    margin: 20px auto;
+    border: 2px solid #000;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+}
+
+.wall {
+    background-color: #000;
+}
+
+.path {
+    background-color: #fff;
+}
+
+.player {
+    background-color: red;
+}
+
+.monster {
+    background-color: blue;
+}
+
+.exit {
+    background-color: green;
+}
+
+#game-over {
+    margin-top: 20px;
+}
