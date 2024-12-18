@@ -10,7 +10,7 @@ const firebaseConfig = {
 };
 
 // Firebase 초기화
-const app = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 let hasParticipated = false; // 부스 참여 여부를 저장할 변수
