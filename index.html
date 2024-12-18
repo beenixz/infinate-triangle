@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 등록 및 부스 참여</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>학생 등록 및 로그인</h1>
+        <input type="text" id="studentId" placeholder="학번 (5자리)">
+        <button class="btn" onclick="loginOrRegister()">로그인/회원가입</button>
+
+        <div id="loginStatus" class="status" style="display: none;">
+            <h2>로그인한 학번: <span id="loggedInStudentId"></span></h2>
+        </div>
+
+        <div id="boothParticipation" style="display: none;">
+            <h2>부스 참여</h2>
+            <select id="boothSelect">
+                <option value="">부스를 선택하세요</option>
+                <option value="1">부스1 (INFOTHERAPY)</option>
+                <option value="2">부스2 (CODEUP)</option>
+                <option value="3">부스3 (WBHS)</option>
+                <option value="4">부스4 (WHALE)</option>
+                <option value="5">부스5 (PYTHON)</option>
+                <option value="6">부스6 (COMPUTER)</option>
+            </select>
+            <input type="text" id="codeInput" placeholder="인증 코드">
+            <button class="btn" onclick="checkCode()">코드 확인</button>
+            <button id="participateButton" class="btn" style="display: none;" onclick="participate()">부스 참여하기</button>
+        </div>
+    </div>
+
+    <div id="popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p id="popupMessage"></p>
+        </div>
+    </div>
+</body>
+</html>
